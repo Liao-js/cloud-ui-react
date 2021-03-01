@@ -1,0 +1,62 @@
+.alert {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: $alert-padding-y $alert-padding-x;
+  box-sizing: border-box;
+  border-radius: $alert-border-radius;
+  color: $white;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transition: $alert-transition;
+
+  &.closing{
+    opacity: 0;
+  }
+
+  &__content {}
+
+  &__title {
+    font-size: $alert-font-size;
+    line-height: $alert-line-height;
+    &.is-bold {
+      font-size: $alert-font-size-bold;
+      font-weight: $alert-font-weight-bold;
+    }
+  }
+
+  &__description{
+    line-height: $alert-line-height;
+    font-size: $alert-font-size;
+    margin: 0;
+  }
+
+  &__closebtn {
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    top: $alert-closebtn-top;
+    right: $alert-closebtn-right;
+    font-size: $alert-closebtn-font-size;
+    &.is-customed{
+      font-style: normal;
+    }
+  }
+}
+
+.alert-default {
+  background: $primary;
+}
+
+.alert-success {
+  background: $success;
+}
+
+.alert-danger {
+  background: $danger;
+}
+
+.alert-warning {
+  background: $warning;
+}

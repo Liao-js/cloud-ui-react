@@ -11,9 +11,9 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
-$blue:    #2e317c !default;
+$blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
+$purple:  #6f42c1!default;
 $pink:    #ce5777 !default;
 $red:     #ee3f4d !default;
 $orange:  #fd7e14 !default;
@@ -203,6 +203,24 @@ $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+// alert 警告
+$alert-radius:                .25rem !default;
+$alert-padding-y:             .5rem !default;
+$alert-padding-x:             1rem !default;
+$alert-line-height:           $line-height-base !default;
+$alert-font-weight-bold:      700;
+
+$alert-font-size:             $font-size-base !default;
+$alert-font-size-bold:        $font-size-lg !default;
+$alert-font-family:           $font-family-base !default;
+$alert-border-radius:         $alert-radius !default;
+
+$alert-closebtn-top:          0.75rem !default;
+$alert-closebtn-right:        1rem !default;
+$alert-closebtn-font-size:    $font-size-base * .75 !default;
+
+$alert-transition:            opacity .2s;
 
 // menu
 $menu-border-width:            $border-width !default;
