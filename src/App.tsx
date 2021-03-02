@@ -21,14 +21,14 @@ function App () {
         <Alert type={AlertType.Danger} closable={false} title={'this is a title'} >this is a description</Alert>
         <Alert type={AlertType.Warning} closeTest={'知道了'} title={'this is a title'}></Alert> */}
         {/* Menu */}
-        <Menu defaultIndex={0}>
-          <MenuItem>
+        <Menu defaultIndex={0} onSelect={(index) => {alert(index)}}>
+          <MenuItem index={0}>
             cool link
           </MenuItem>
-          <MenuItem>
+          <MenuItem index={1} disabled>
             cool link 2
           </MenuItem>
-          <MenuItem>
+          <MenuItem index={2}>
             cool link 3
           </MenuItem>
         </Menu>
