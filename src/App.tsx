@@ -1,8 +1,12 @@
 import React from 'react';
+
 import Button, { ButtonType, ButtonSize } from './components/Button/button'
+
 import Alert, { AlertType } from './components/Alert/alert'
+
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu'
 
 function App () {
   return (
@@ -21,14 +25,22 @@ function App () {
         <Alert type={AlertType.Danger} closable={false} title={'this is a title'} >this is a description</Alert>
         <Alert type={AlertType.Warning} closeTest={'知道了'} title={'this is a title'}></Alert> */}
         {/* Menu */}
-        <Menu defaultIndex={0} onSelect={(index) => {alert(index)}}>
-          <MenuItem index={0}>
+        <Menu defaultIndex={0} onSelect={(index) => {alert(index)}} mode='vertical'>
+          <MenuItem>
             cool link
           </MenuItem>
-          <MenuItem index={1} disabled>
+          <MenuItem disabled>
             cool link 2
           </MenuItem>
-          <MenuItem index={2}>
+          <SubMenu title="dropdown">
+            <MenuItem>
+             dropdown 1
+            </MenuItem>
+            <MenuItem>
+             dropdown 2
+            </MenuItem>
+          </SubMenu>
+          <MenuItem>
             cool link 3
           </MenuItem>
         </Menu>
