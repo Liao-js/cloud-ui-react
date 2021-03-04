@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 import Button, { ButtonType, ButtonSize } from './components/Button/button'
 
 import Alert, { AlertType } from './components/Alert/alert'
@@ -12,6 +15,8 @@ function App () {
   return (
     <div className="App">
       <header className="App-header">
+        {/* Icon */}
+        <FontAwesomeIcon icon={faCoffee} size="10x" />
         {/* button */}
         {/* <Button autoFocus> Hello </Button>
         <Button disabled> Disabled Button </Button>
@@ -25,7 +30,7 @@ function App () {
         <Alert type={AlertType.Danger} closable={false} title={'this is a title'} >this is a description</Alert>
         <Alert type={AlertType.Warning} closeTest={'知道了'} title={'this is a title'}></Alert> */}
         {/* Menu */}
-        <Menu defaultIndex={0} onSelect={(index) => {alert(index)}} mode='vertical'>
+        {/* <Menu defaultIndex='0' onSelect={(index) => {alert(index)}} mode='vertical' defaultOpenSubMenus={['2']}>
           <MenuItem>
             cool link
           </MenuItem>
@@ -43,7 +48,7 @@ function App () {
           <MenuItem>
             cool link 3
           </MenuItem>
-        </Menu>
+        </Menu> */}
       </header>
     </div>
   );
