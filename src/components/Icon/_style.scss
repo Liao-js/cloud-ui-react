@@ -1,0 +1,7 @@
+.cloud-icon {
+  @each $key, $val in $theme-colors {
+    &.icon-#{$key} {
+      color: $val;
+    }
+  }
+}
