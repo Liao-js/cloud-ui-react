@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 import Button from './components/Button/button'
 
@@ -12,8 +13,24 @@ import Icon from './components/Icon/icon'
 
 import Transition from './components/Transition/transition'
 
-function App () {
-  const [ show, setShow ] = useState(false)
+function App() {
+  const [show, setShow] = useState(false)
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files
+    if (files) {
+      const uploadedFile = files[0]
+      const formData = new FormData()
+      formData.append(uploadedFile.name, uploadedFile)
+      axios.post('https://jsonplaceholder.typicode.com/posts', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(resp => {
+        console.log(resp)
+      })
+    }
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -32,7 +49,7 @@ function App () {
         <Alert type={AlertType.Danger} closable={false} title={'this is a title'} >this is a description</Alert>
         <Alert type={AlertType.Warning} closeTest={'知道了'} title={'this is a title'}></Alert> */}
         {/* Menu */}
-        <Menu defaultIndex='0' onSelect={(index) => {alert(index)}}>
+        {/* <Menu defaultIndex='0' onSelect={(index) => {alert(index)}}>
           <MenuItem>
             cool link
           </MenuItem>
@@ -50,7 +67,7 @@ function App () {
           <MenuItem>
             cool link 3
           </MenuItem>
-        </Menu>
+        </Menu> */}
         {/* Transition */}
         {/* <Button size='lg' onClick={() => {setShow(!show)}}> Toggle </Button>
         <Transition
@@ -78,6 +95,8 @@ function App () {
         >
           <Button size="lg" btnType="primary">A Single Button </Button>
         </Transition> */}
+        {/* axios  upload test */}
+        <input type="file" name="myFile" onChange={handleFileChange} />
       </header>
     </div>
   );
